@@ -1,0 +1,251 @@
+/* Reset e configurações gerais */
+div[data-testid="stHeader"] {
+    height: 20px;
+    background-color: rgba(0,0,0,0) !important;
+}
+
+.block-container {
+    padding-top: 0.5rem !important; /* Reduzido para subir o conteúdo */
+    padding-bottom: 1rem;
+}
+
+/* Container principal para header com 2 colunas - CORRIGIDO */
+.header-container {
+    display: grid !important;
+    grid-template-columns: auto 1fr !important;
+    align-items: center !important;
+    gap: 20px !important;
+    margin: 0.5rem 0 1.5rem 0 !important;
+    padding: 0.5rem 0 !important;
+    width: 100% !important;
+}
+
+/* Logo na primeira coluna - CORRIGIDO */
+.header-logo {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+.header-logo img {
+    max-width: 120px !important;
+    height: auto !important;
+}
+
+/* Título na segunda coluna - CORRIGIDO */
+.azoup-title {
+    font-size: 2.2rem !important;
+    font-weight: 700 !important;
+    color: #1f77b4 !important;
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: center !important;
+    white-space: nowrap !important;
+}
+
+/* Tela de login mais para cima - NOVO */
+.login-page-container {
+    min-height: 85vh !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    padding-top: 2rem !important;
+}
+
+.login-container {
+    padding: 2rem !important;
+    text-align: center !important;
+    margin-top: 0 !important;
+}
+
+/* Garantir que o conteúdo principal comece mais alto */
+.main .block-container {
+    padding-top: 0.5rem !important;
+}
+
+/* Botões */
+.stButton > button {
+    background-color: #FF7F00 !important;
+    color: white !important;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color .2s ease;
+    font-weight: 600;
+}
+
+.stButton > button:hover {
+    background-color: #FF9900 !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    visibility: visible !important;
+    display: block !important;
+    background-color: #f8f9fa;
+}
+
+.sidebar .sidebar-content {
+    background-color: #f8f9fa;
+    padding: 1rem 0.5rem;
+    visibility: visible !important;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    margin-top: 0;
+}
+
+.company-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f77b4;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.user-info {
+    background-color: #f0f2f6;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Container principal */
+.main-content {
+    padding: 0 1rem;
+    margin-top: 33px;
+
+}
+
+/* KPIs - GRID em 3 colunas */
+.kpi-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.kpi-box {
+    background: linear-gradient(180deg, #A9ABAE 0%, #1e1e1e 85%);
+    border-radius: 12px;
+    padding: 25px;
+    color: #F79633;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    transition: transform .15s ease, box-shadow .15s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 150px;
+    margin-bottom: 25px;
+}
+
+.kpi-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.28);
+}
+
+.kpi-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #F79633;
+    margin: 5px 0;
+}
+
+.kpi-sub {
+    font-size: 12px;
+    color: #9aa3b2;
+    margin-top: 10px;
+}
+
+/* Progress bar */
+.stProgress > div > div > div > div {
+    background-color: #FF7F00 !important;
+}
+
+/* Responsividade */
+@media (max-width: 1100px) {
+    .kpi-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .header-container {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .header-logo {
+        justify-content: center !important;
+    }
+    
+    .azoup-title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    
+    .kpi-container {
+        grid-template-columns: 1fr;
+    }
+    
+    section[data-testid="stSidebar"] {
+        min-width: 200px !important;
+        max-width: 200px !important;
+    }
+    
+    .main-content {
+        padding: 0 0.5rem;
+    }
+}
+
+/* Ajustes para gráficos e containers */
+.stPlotlyChart {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Expanders */
+.streamlit-expanderHeader {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f77b4;
+}
+
+/* Tabs */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 24px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 50px;
+    background-color: #f0f2f6;
+    border-radius: 6px 6px 0 0;
+    padding: 10px 20px;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #1f77b4;
+    color: white;
+}
