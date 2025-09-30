@@ -1,0 +1,94 @@
+python -m venv zpfbi
+zpfbi\scripts\activate
+
+Cores:
+Laranja: #FF7F00
+
+
+CLIENTE: CARTONAGEM
+Caminho=azoupfb5.sp1.br.saveincloud.net.br/15421:/opt/firebird/data/CARTONAGEM.FDB
+Senha=PXSK6Xmn9s2VpI7N9uv1
+
+
+email: contato@cartonagemipiranga.com.br
+senha base: adminbi123
+update usuario set senha = 'adminbi123' where email = 'contato@cartonagemipiranga.com.br'
+
+insert into usuario (nome_usuario, email_usuario, tipo, senha, perfil)
+values ('norbiato', 'contato@cartonagemipiranga.com.br', 'Admin','7d1f8c1cceeb8cbb8c948d3873c4c3d0c4a4d6a0e4f4a4c4e4a4d6a0e4f4a4c4e4a4d6a0e4f4a4c',
+                                                                    
+'Super Admin')
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import plotly.graph_objects as go
+from auth import login_user, signup_user
+from database import get_firebird_connection, test_firebird_connection, init_supabase
+from dashboard import show_dashboard
+from datetime import datetime, date
+import os
+from streamlit_option_menu import option_menu
+import time
+
+
+pip install streamlit 
+pip install pandas 
+pip install numpy as np
+pip install plotly.express 
+pip install plotly.graph_objects 
+
+
+
+Eu preciso criar uma aplicação de Business Intelligence com python, streamlit,  plotly.
+Podemos ainda avaliar a utilização das bibliotecas PyGWalker e Streamlit - ECharts, Elements
+Precisamos de recursos personalizaveis para esta aplicação.
+Podemos ainda avaliar a utilização das bibliotecas PyGWalker e Streamlit - ECharts, 
+
+Passo 1:
+
+Os banco de dados utilizados serão supabase para controlar o acesso e firebird onde estara os dados para o BI.
+A biblioteca de conexão com o Firebird deve ser a "firebird-driver" 
+Então, vamos criar o arquivo de conexão para os 2 banco de dados.
+
+Passo 2:
+Esta aplicação deve conter inicialmente uma pagina de login, onde o usuario vai fazer login ou se cadastrar pela primeira
+vez, selecionando a empresa cliente que esta na tabela "clientes" do supabase, vai trazer os dados dos campos "caminho",
+"usuario" e "senha" que são os dados referentes a conexao com o firebird, configurando esses dados como conexão do firebird 
+dinamicamente no programa python.
+
+Caso o usuario não tenha cadastro para o sistema de BI, 
+deve ser direcionado para uma tela de "autorizacao" de usuarios, onde um usuario com Perfil "Super Admin" vai cadastra-lo,
+e esta tela deve gravar na tabela do supabase "usuarios" os dados "email_usuario", "nome_usuario", "tipo" (default = 'BI'), 
+"celular", "senha", "perfil"
+a considerar perfil como os seguintes perfis padrão do sistema:
+1-Super Admin
+2-Admin Cliente
+3-Básico
+4-Visualizador
+esta seleção pode ser feita com o componente selectbox do streamlit
+
+Passo 3:
+Após este cadastro previamente efetuado, o usuario pode voltar para a tela de login principal e acessar o sistema.
+
+Após o login efetuado, o sistema vai apresentar um menu principal, onde teremos diversos tipos de areas de BI, como por exemplo:
+"Vendas", "Financeiro", "Produção" emtre outras a serem definidas em uma segunda etapa do projeto.
+O menu da aplicação podemos utilizar streamlit-option-menu, explorando a NAVBAR do componente, temos que apresentar
+uma otima estilização para a aplicação.
+
+Nestre tela principal de menu, o sistema deve apresentar ao lado superior direito, o Nome da Empresa e o nome do usuario logado.
+
+Vamos fazer estes 3 passos inicialmente para dar- sequencia na aplicação.
+
+
+eu gostaria de fazer mais uma alteração na tela, colocando o titulo "Azoup - Business Intelligence" na frente do logo (em 2 colunas), 
+vamos aproveitar para aumentar um pouco o tamanho do logo
+Os botoes "Login" e "Cadastrar" pode colocar um backgroung #FF7F00 e a cor da font em branco
+
+
+
+
+
+
+
